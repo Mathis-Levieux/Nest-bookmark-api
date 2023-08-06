@@ -12,7 +12,7 @@ export class AuthController {
         return this.authService.signup(dto)
     }
 
-    @HttpCode(HttpStatus.OK) // Sert à renvoyer le code http souhaité. Vu qu'on ne crée rien avec signin, on peut renvoyer OK
+    @HttpCode(HttpStatus.OK) // Sert à renvoyer le code http souhaité. Vu qu'on ne crée rien avec signin, on peut renvoyer OK (200)
     @Post('signin')
     signin(
         @Body() dto: AuthDto) {

@@ -12,8 +12,7 @@ export class UserController {
     constructor(private userService: UserService) { }
     // route : /users/me 
     @Get('me')
-    getMe(@GetUser() user: User, @GetUser('email') userEmail: string) {
-        // console.log({ email: userEmail }) // Pratique pour obtenir juste une info
+    getMe(@GetUser() user: User) {
         return user
     }
 

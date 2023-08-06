@@ -5,7 +5,7 @@ import { GetUser } from 'src/auth/decorator';
 import { CreateBookmarkDto } from './dto';
 import { EditBookmarkDto } from './dto/edit-bookmark.dto';
 
-@UseGuards(JwtGuard) // BEsoin d'être authentifié pour accéder à ces routes
+@UseGuards(JwtGuard) // Besoin d'être authentifié pour accéder à ces routes
 @Controller('bookmark')
 export class BookmarkController {
     constructor(private bookmarkService: BookmarkService) { }

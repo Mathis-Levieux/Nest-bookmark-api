@@ -85,7 +85,7 @@ describe('App e2e', () => {
       it('Should edit user', () => {
         const dto: EditUserDto = {
           firstName: "Vladimir",
-          email: "vlad@codewithvlad.com"
+          email: "vlad@codewithvladtest.com"
         }
         return pactum.spec().patch('/users',).withBearerToken('$S{userAT}').withBody(dto).expectStatus(200)
           .expectBodyContains(dto.firstName)
