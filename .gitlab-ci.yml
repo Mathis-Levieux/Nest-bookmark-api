@@ -11,6 +11,7 @@ test:
   script:
     - docker build -t my-image .
     - docker-compose -f docker-compose.yml up -d
+    - sleep 10
     - docker-compose -f docker-compose.yml exec nest-test npm run test:e2e
   only:
     - master # Déclencher le pipeline uniquement sur la branche master (vous pouvez ajuster selon vos besoins)
