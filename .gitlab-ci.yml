@@ -1,0 +1,19 @@
+image: docker:dind
+
+services:
+  - name: docker:dind
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - docker build -t my-image .
+    - docker-compose -f docker-compose.yml up -d
+
+test:
+  stage: test
+  script:
+    - docker-compose exec nest-test npm run test:e2e
