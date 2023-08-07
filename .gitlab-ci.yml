@@ -16,4 +16,4 @@ build:
 test:
   stage: test
   script:
-    - docker-compose exec nest-test npm run test:e2e
+    - docker-compose exec my-image npm run test:e2e
