@@ -15,6 +15,6 @@ build:
 test:
   stage: test
   script:
-    - docker build -t my-image .
     - docker-compose up -d
+    - sleep 10 # Attendre 10 secondes pour que le service soit opérationnel
     - docker-compose -f docker-compose.yml exec nest-test npm run test:e2e
