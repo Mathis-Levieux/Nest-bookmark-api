@@ -20,5 +20,16 @@ services:
       POSTGRES_db: nest
     networks:
       - freecodecamp
+  nest-test:
+    image: my-image # Utilisez le nom de votre image construite
+    container_name: nest-test
+    restart: no
+    ports:
+      - "3001:3001"
+    depends_on:
+      - test-db # Dépendance sur le service test-db
+    command: npm run test:e2e # Commande pour exécuter les tests E2E
+    networks:
+      - freecodecamp
 networks:
   freecodecamp:
