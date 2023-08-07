@@ -11,9 +11,9 @@ build:
   stage: build
   script:
     - docker build -t my-image .
-    - docker-compose -f docker-compose.yml up -d
 
 test:
   stage: test
   script:
+    - docker-compose up -d
     - docker-compose -f docker-compose.yml exec nest-test npm run test:e2e

@@ -20,7 +20,7 @@ services:
       POSTGRES_db: nest
     networks:
       - freecodecamp
-  nest-test:
+  my-image:
     image: my-image # Utilisez le nom de votre image construite
     container_name: nest-test
     restart: no
