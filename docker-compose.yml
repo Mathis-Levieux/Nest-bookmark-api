@@ -21,7 +21,7 @@ services:
     networks:
       - freecodecamp
   my-image:
-    image: my-image # Utilisez le nom de votre image construite
+    image: nest-test # Utilisez le nom de votre image construite
     container_name: nest-test
     restart: no
     ports:
