@@ -12,14 +12,18 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       secretOrKey: config.get('JWT_SECRET'),
     });
   }
-  async validate(payload: any) {
-    return payload; // On peut soit retourner le payload, soit chercher l'utilisateur et le renvoyer, sans le mot de passe ofc
-    // const user = await this.prisma.user.findUnique({
-    //     where: {
-    //         id: payload.sub,
-    //     }
-    // })
-    // delete user.hash // ne pas oublier de supprimer le mot de passe
-    // return user
+  async validate(payload: {
+    sub: number,
+    email: string
+  }) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        id: payload.sub,
+      }
+    })
+    delete user.hash // ne pas oublier de supprimer le mot de passe
+    console.log(payload)
+    console.log(user)
+    return user // Ce que la fonction retourne est enregistré dans le request.user
   }
 }
