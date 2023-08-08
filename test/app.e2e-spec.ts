@@ -40,7 +40,7 @@ describe('App e2e', () => {
           .spec()
           .post('/auth/signup')
           .withBody({ password: dto.password })
-          .expectStatus(400);
+          .expectStatus(401);
       });
 
       it('Should throw if password empty', () => {
