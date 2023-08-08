@@ -5,15 +5,10 @@ services:
 
 stages:
   - build
-  - test
 
 build:
   stage: build
   script:
     - docker build -t skurt .
     - docker compose up -d
-
-test:
-  stage: test
-  script:
     - docker-compose exec nestjs-api npm run test:docker:e2e
