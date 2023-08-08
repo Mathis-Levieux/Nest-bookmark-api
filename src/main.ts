@@ -16,6 +16,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true })); // Sert à utiliser le pipe de validation de NestJS globalement (les dto)
-  await app.listen(3001);
+  await app.listen(3002);
 }
 bootstrap();
