@@ -22,8 +22,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       }
     })
     delete user.hash // ne pas oublier de supprimer le mot de passe
-    console.log(payload)
-    console.log(user)
     return user // Ce que la fonction retourne est enregistré dans le request.user
   }
 }
